@@ -3,12 +3,12 @@
     {{# Layout template="orionSemanticTitle" }}
       {{ i18n 'accounts.index.title' }}
       {{# if userHasPermission 'accounts.showCreate' }}
-        <a href="{{ pathFor 'accounts.create' }}" class="btn btn-default btn-xs"><i class="fa fa-plus"></i></a>
+        <a href="{{ pathFor 'accounts.create' }}" class="ui icon button"><i class="plus icon"></i></a>
       {{/ if }}
     {{/ Layout }}
 
     {{# Layout template="orionSemanticContentContainer" }}
-      <table class="table">
+      <table class="ui celled table">
         <thead>
           <tr>
             <th>{{i18n 'accounts.index.tableTitles.name'}}</th>
@@ -28,12 +28,12 @@
               </td>
               <td>
                 {{# each roles }}
-                  <span class="label label-danger">{{ this }}</span>
+                  <span class="ui red label">{{ this }}</span>
                 {{/ each }}
               </td>
               <td>
                 {{# each buttons }}
-                  <a class="btn btn-default btn-xs user-btn-action" data-user="{{ ../_id }}">{{ title }}</a>
+                  <a class="ui tiny user-btn-action button" data-user="{{ ../_id }}">{{ title }}</a>
                 {{/ each }}
               </td>
             </tr>
