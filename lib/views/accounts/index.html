@@ -1,36 +1,38 @@
-<template name="orionBootstrapAccountIndex">
-  {{# Layout template="orionBootstrapSmallContentOffset" }}
-    {{# Layout template="orionBootstrapTitle" }}
+<template name="orionSemanticAccountIndex">
+  {{# Layout template="orionSemanticSmallContentOffset" }}
+    {{# Layout template="orionSemanticTitle" }}
       {{ i18n 'accounts.myAccount.title' }}
     {{/ Layout }}
 
-    {{# Layout template="orionBootstrapContentContainer" }}
-      <div class="row">
+    {{# Layout template="orionSemanticContentContainer" }}
+      <div class="ui grid">
         {{# if currentUser.profile.picture }}
-          <div class="col-sm-2">
-            <p>
-              <img class="profile-picture" src="{{ currentUser.profile.picture.url }}">
-            </p>
+          <div class="two wide column">
+            <img class="ui bordered profile-picture image" src="{{ currentUser.profile.picture.url }}">
           </div>
         {{/ if }}
-        <div class="col-sm-10">
-          <p><b>{{ currentUser.profile.name }}</b></p>
+        <div class="ten wide column">
+          <h2 class="ui header">{{ currentUser.profile.name }}</h2>
           {{# each currentUser.emails }}
             <p>{{ address }}</p>
           {{/ each }}
-          <p>
           {{# each currentUser.roles }}
-            <span class="label label-danger">{{ this }}</span>
+            <span class="ui red label">{{ this }}</span>
           {{/ each }}
-          </p>
         </div>
       </div>
+
       <hr>
-      <div class="buttons">
-        <a class="btn btn-default btn-xs logout">{{ i18n 'global.logout' }}</a>
-        <a href="{{ pathFor 'myAccount.profile' }}" class="btn btn-default btn-xs">{{ i18n 'accounts.updateProfile.title' }}</a>
-        <a href="{{ pathFor 'myAccount.password' }}" class="btn btn-default btn-xs">{{ i18n 'accounts.changePassword.title' }}</a>
-      </div>
+
+      <button class="ui tiny red logout button">
+        {{ i18n 'global.logout' }}
+      </button>
+      <a class="ui tiny button" href="{{ pathFor 'myAccount.profile' }}">
+        {{ i18n 'accounts.updateProfile.title' }}
+      </a>
+      <a class="ui tiny button" href="{{ pathFor 'myAccount.password' }}">
+        {{ i18n 'accounts.changePassword.title' }}
+      </a>
     {{/ Layout }}
   {{/ Layout }}
 </template>
