@@ -1,46 +1,44 @@
-<template name="orionBootstrapRegisterWithInvitation">
+<template name="orionSemanticRegisterWithInvitation">
   {{# contentFor "title" }}
     {{ i18n 'accounts.register.title' }}
   {{/ contentFor }}
   {{# if invitation }}
     {{# if error }}
-      <br>
-      <div class="alert alert-danger">
-        {{ error }}
+      <div class="ui negative message">
+        <div class="header">
+          {{ error }}
+        </div>
       </div>
-      <br>
     {{ else }}
-      <p class="text-center">
-        <label class="label label-danger">{{ invitation._id }}</label>
-      </p>
-      <br>
+      <div class="ui positive message">
+        <div class="header">
+          {{ invitation._id }}
+        </div>
+      </div>
     {{/ if }}
 
-    <form>
-      <div class="form-group">
+    <form class="ui form">
+      <div class="field">
         <label>{{i18n 'accounts.register.fields.email'}}</label>
         {{# if invitation.email }}
-          <input class="form-control" value="{{ invitation.email }}" name="email" type="email" disabled=true>
+          <input type="email" name="email" value="{{ invitation.email }}" disabled=true>
         {{ else }}
-          <input class="form-control" placeholder="{{i18n 'accounts.register.fields.email'}}" name="email" type="email">
+          <input type="email" name="email" placeholder="{{i18n 'accounts.register.fields.email'}}" />
         {{/ if }}
       </div>
-      <div class="form-group">
+      <div class="field">
         <label>{{i18n 'accounts.register.fields.name'}}</label>
-        <input class="form-control" placeholder="{{i18n 'accounts.register.fields.name'}}" name="name" type="text">
+        <input type="text" name="name" placeholder="{{i18n 'accounts.register.fields.name'}}" />
       </div>
-      <div class="form-group">
+      <div class="field">
         <label>{{i18n 'accounts.register.fields.password'}}</label>
-        <input class="form-control" placeholder="{{i18n 'accounts.register.fields.password'}}" name="password" type="password">
+        <input type="password" name="password" placeholder="{{i18n 'accounts.register.fields.password'}}">
       </div>
-      <div class="form-group">
+      <div class="field">
         <label>{{i18n 'accounts.register.fields.confirmPassword'}}</label>
-        <input class="form-control" placeholder="{{i18n 'accounts.register.fields.confirmPassword'}}" name="password-confirm" type="password">
+        <input type="password" name="password-confirm" placeholder="{{i18n 'accounts.register.fields.confirmPassword'}}">
       </div>
-      <br>
-      <div class="form-group">
-        <button class="btn btn-primary btn-block btn-lg">{{i18n 'accounts.register.registerButton'}}</button>
-      </div>
+      <button class="ui big primary button">{{i18n 'accounts.register.registerButton'}}</button>
     </form>
   {{/ if }}
 </template>
