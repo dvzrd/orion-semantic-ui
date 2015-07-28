@@ -1,15 +1,15 @@
-<template name="orionBootstrapCollectionsIndex">
-  {{# Layout template="orionBootstrapMediumContentOffset" }}
-    {{# Layout template="orionBootstrapTitle" }}
+<template name="orionSemanticCollectionsIndex">
+  {{# Layout template="orionSemanticMediumContentOffset" }}
+    {{# Layout template="orionSemanticTitle" }}
       {{ collection.title }}
       {{# if collection.canShowCreate }}
-        <a href="{{ collection.createPath }}" class="btn btn-default btn-xs"><i class="fa fa-plus"></i></a>
+        <a href="{{ collection.createPath }}" class="ui icon button"><i class="plus icon"></i></a>
       {{/ if }}
     {{/ Layout }}
-    {{# Layout template="orionBootstrapContentContainer" }}
+    {{# Layout template="orionSemanticContentContainer" }}
       {{# if collection.canIndex }}
         {{# if showTable }}
-          {{> tabular table=collection.tabularTable class="table index-table" }}
+          {{> tabular table=collection.tabularTable class="ui index-table table" }}
         {{/ if }}
       {{/ if }}
     {{/ Layout }}
