@@ -1,12 +1,12 @@
-<template name="orionBootstrapLayout">
-  <div class="orion-bootstrap-admin">
+<template name="orionSemanticLayout">
+  <div class="orion-semantic-admin">
     <div class="sidebar">
       {{# if dictionaryReady }}
         {{> reactiveTemplate template="adminSidebar" }}
       {{/ if }}
     </div>
     <div class="content">
-      {{> orionBootstrapHeader }}
+      {{> orionSemanticHeader }}
       <div class="container-fluid">
         <div class="row">
           <div class="col-sm-12">
@@ -27,7 +27,7 @@
   </style>
 </template>
 
-<template name="orionBootstrapOutAdminLayout">
+<template name="orionSemanticOutAdminLayout">
   <div class="container">
     <div class="row">
       <div class="col-sm-6 col-sm-offset-3 col-lg-4 col-lg-offset-4">
@@ -38,7 +38,7 @@
   </div>
 </template>
 
-<template name="orionBootstrapHeader">
+<template name="orionSemanticHeader">
   <div class="navbar">
     <div class="navbar-header">
       <div class="navbar-header">
@@ -70,7 +70,7 @@
   </div>
 </template>
 
-<template name="orionBootstrapSmallContentOffset">
+<template name="orionSemanticSmallContentOffset">
   <div class="row">
     <div class="col-sm-8 col-sm-offset-2">
       {{> yield }}
@@ -78,7 +78,7 @@
   </div>
 </template>
 
-<template name="orionBootstrapMediumContentOffset">
+<template name="orionSemanticMediumContentOffset">
   <div class="row">
     <div class="col-sm-10 col-sm-offset-1">
       {{> yield }}
@@ -86,20 +86,20 @@
   </div>
 </template>
 
-<template name="orionBootstrapContentContainer">
+<template name="orionSemanticContentContainer">
   <div class="well">
     {{> yield }}
   </div>
 </template>
 
-<template name="orionBootstrapTitle">
+<template name="orionSemanticTitle">
   <h1 class="title">
     {{> yield }}
   </h1>
   <hr>
 </template>
 
-<template name="orionBootstrapTabs">
+<template name="orionSemanticTabs">
   {{# each items }}
     <a class="btn btn-xs {{ class }}">{{ title }}</a>
   {{/ each }}
