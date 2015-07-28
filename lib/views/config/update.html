@@ -1,23 +1,19 @@
-<template name="orionBootstrapConfigUpdate">
-  {{# Layout template="orionBootstrapSmallContentOffset" }}
-    {{# Layout template="orionBootstrapTitle" }}
+<template name="orionSemanticConfigUpdate">
+  {{# Layout template="orionSemanticSmallContentOffset" }}
+    {{# Layout template="orionSemanticTitle" }}
       {{ i18n 'config.update.title' }}
     {{/ Layout }}
-    {{# Layout template="orionBootstrapContentContainer" }}
-      <p>
+    {{# Layout template="orionSemanticContentContainer" }}
+      <div class="ui top attached tab segment">
         {{> reactiveTemplate template="tabs" data=getDataForTabs }}
-      </p>
-      <hr>
+      </div>
       {{# autoForm collection="orion.config.collection" id="updateConfigForm" type="update" doc=getDoc }}
         {{# if getFields }}
           {{# each afFieldNames fields=getFields }}
             {{> afQuickField name=this.name options=afOptionsFromSchema }}
           {{/ each}}
         {{/ if }}
-        <br>
-        <div class="text-right">
-          <button class="btn btn-primary">{{ i18n 'global.save' }}</button>
-        </div>
+        <button class="ui primary button">{{ i18n 'global.save' }}</button>
       {{/ autoForm }}
     {{/ Layout }}
   {{/ Layout }}
