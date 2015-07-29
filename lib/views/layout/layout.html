@@ -28,35 +28,27 @@
 </template>
 
 <template name="orionSemanticHeader">
-  <div class="navbar">
-    <div class="navbar-header">
-      <div class="navbar-header">
-        <a class="menu-toggle navbar-brand">
-          <i class="fa fa-bars"></i>
-        </a>
-      </div>
+  <nav class="ui inverted menu">
+    <div class="ui icon item menu-toggle">
+      <i class="menu icon"></i>
     </div>
     {{# with getAdminLink 'myAccount' }}
-      <div class="navbar-collapse collapse navbar-responsive-collapse navbar-inverse" id="user-profile-dropdown">
-        <ul class="nav navbar-nav navbar-right">
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              {{ title }} <span class="caret"></span>
+      <div class="ui right dropdown item">
+        {{ title }}
+        <i class="dropdown icon"></i>
+        <div class="menu">
+          {{# each childs }}
+            <a class="item {{ isActiveRoute regex=activeRouteRegex }}" href="{{ pathFor routeName }}">
+              {{ title }}
             </a>
-            <ul class="dropdown-menu">
-              {{# each childs }}
-                <li class="{{ isActiveRoute regex=activeRouteRegex }}">
-                  <a href="{{ pathFor routeName }}" class="grey-text text-darken-4">{{ title }}</a>
-                </li>
-              {{/ each }}
-              <li role="separator" class="divider"></li>
-              <li><a href="#" class="logout"><i class="fa fa-sign-out"></i> {{ i18n 'global.logout' }}</a></li>
-            </ul>
-          </li>
-        </ul>
+          {{/each}}
+          <a class="logout item">
+            {{ i18n 'global.logout' }}
+          </a>
+        </div>
       </div>
     {{/ with }}
-  </div>
+  </nav>
 </template>
 
 <template name="orionSemanticSmallContentOffset">
