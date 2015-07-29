@@ -1,17 +1,14 @@
-<template name="orionBootstrapPagesUpdate">
-  {{# Layout template="orionBootstrapMediumContentOffset" }}
-	{{# Layout template="orionBootstrapTitle" }}
+<template name="orionSemanticPagesUpdate">
+  {{# Layout template="orionSemanticMediumContentOffset" }}
+	{{# Layout template="orionSemanticTitle" }}
 		{{ i18n 'pages.update.title' }}
 	{{/ Layout }}
-	{{# Layout template="orionBootstrapContentContainer" }}
+	{{# Layout template="orionSemanticContentContainer" }}
 		{{# if getSchema }}
 			{{> quickForm collection="orion.pages.collection" schema=getSchema doc=this id="orionPagesUpdateForm" type="update" buttonContent=false }}
-			<br>
-			<div class="buttons text-right">
-				<a class="btn btn-default cancel-btn" href="{{ pathFor 'pages.index' }}">{{ i18n 'global.cancel' }}</a>
-				<a class="btn btn-danger delete-btn" href="{{ pathFor 'pages.delete' }}">{{ i18n 'global.delete' }}</a>
-				<a class="btn btn-primary save-btn">{{ i18n 'global.save' }}</a>
-			</div>
+			<a class="ui cancel-btn button" href="{{ pathFor 'pages.index' }}">{{ i18n 'global.cancel' }}</a>
+			<a class="ui red delete-btn button" href="{{ pathFor 'pages.delete' }}">{{ i18n 'global.delete' }}</a>
+			<a class="ui primary save-btn button">{{ i18n 'global.save' }}</a>
 		{{/ if }}
 	{{/ Layout }}
   {{/ Layout }}
