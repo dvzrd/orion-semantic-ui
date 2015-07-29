@@ -1,39 +1,28 @@
 <template name="orionSemanticLayout">
-  <div class="orion-semantic-admin">
-    <div class="sidebar">
+  <div class="orion-semantic-admin pushable">
+    <div class="ui inverted left inline vertical sidebar menu">
       {{# if dictionaryReady }}
         {{> reactiveTemplate template="adminSidebar" }}
       {{/ if }}
     </div>
-    <div class="content">
+    <div class="content pusher">
       {{> orionSemanticHeader }}
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-sm-12">
-            <div class="admin-content">
-              {{# if dictionaryReady }}
-                {{> yield }}
-              {{/ if }}
-            </div>
-          </div>
+      <div class="ui stackable grid container">
+        <div class="admin-content column">
+          {{# if dictionaryReady }}
+            {{> yield }}
+          {{/ if }}
         </div>
       </div>
     </div>
   </div>
-  <style type="text/css">
-    html, body {
-      overflow: visible;
-    }
-  </style>
 </template>
 
 <template name="orionSemanticOutAdminLayout">
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-6 col-sm-offset-3 col-lg-4 col-lg-offset-4">
-        <h1 class="text-center">{{> yield 'title' }}</h1>
-        {{> yield }}
-      </div>
+  <div class="ui stackable centered grid container">
+    <div class="column">
+      <h1 class="ui dividing header">{{> yield 'title' }}</h1>
+      {{> yield }}
     </div>
   </div>
 </template>
@@ -71,36 +60,35 @@
 </template>
 
 <template name="orionSemanticSmallContentOffset">
-  <div class="row">
-    <div class="col-sm-8 col-sm-offset-2">
+  <div class="ui right aligned grid">
+    <div class="right floated left aligned eight wide column">
       {{> yield }}
     </div>
   </div>
 </template>
 
 <template name="orionSemanticMediumContentOffset">
-  <div class="row">
-    <div class="col-sm-10 col-sm-offset-1">
+  <div class="ui right aligned grid">
+    <div class="right floated left aligned ten wide column">
       {{> yield }}
     </div>
   </div>
 </template>
 
 <template name="orionSemanticContentContainer">
-  <div class="well">
+  <div class="ui raised segment">
     {{> yield }}
   </div>
 </template>
 
 <template name="orionSemanticTitle">
-  <h1 class="title">
+  <h1 class="ui dividing header">
     {{> yield }}
   </h1>
-  <hr>
 </template>
 
 <template name="orionSemanticTabs">
   {{# each items }}
-    <a class="btn btn-xs {{ class }}">{{ title }}</a>
+    <a class="ui small {{ class }} button">{{ title }}</a>
   {{/ each }}
 </template>
