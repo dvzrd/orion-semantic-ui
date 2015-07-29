@@ -1,22 +1,23 @@
-<template name="orionBootstrapSidebar">
-  <ul class="sidebar-nav orion-links">
-    <li class="sidebar-brand">
-      <a href="{{ options 'homePath' '/' }}">
+<template name="orionSemanticSidebar">
+  <div class="item">
+    <a class="ui brand header" href="{{ options 'homePath' '/' }}">
+      <i class="user icon"></i>
+      <div class="content">
         {{ options 'siteName' 'Admin' }}
-      </a>
-    </li>
-    {{# each adminLinks }}
-      {{> orionBootstrapSidebarLink }}
-    {{/ each }}
-  </ul>
+      </div>
+    </a>
+  </div>
+  {{# each adminLinks }}
+    {{> orionSemanticSidebarLink }}
+  {{/ each }}
 </template>
 
-<template name="orionBootstrapSidebarLink">
+<template name="orionSemanticSidebarLink">
   {{# if childs }}
-    <li>
+    <div class="item">
       {{# if routeName }}
         <a class="collapse-link-right" data-target="#admin-links-{{ identifier }}" data-toggle="collapse">
-          <span class="caret"></span>
+          <i class="dropdown icon"></i>
         </a>
         <a href="{{ pathFor routeName }}">
           {{ title }}
@@ -24,20 +25,18 @@
       {{ else }}
         <a data-target="#admin-links-{{ identifier }}" data-toggle="collapse">
           {{ title }}
-          <span class="caret"></span>
+          <i class="dropdown icon"></i>
         </a>
       {{/ if }}
       <div class="collapse" id="admin-links-{{ identifier }}">
-        <ul class="child-links">
-          {{# each childs }}
-            {{> orionBootstrapSidebarLink }}
-          {{/ each }}
-        </ul>
+        {{# each childs }}
+          {{> orionSemanticSidebarLink }}
+        {{/ each }}
       </div>
-    </li>
+    </div>
   {{ else }}
-    <li class="{{ isActiveRoute regex=activeRouteRegex }}">
+    <div class="item {{ isActiveRoute regex=activeRouteRegex }}">
       <a href="{{ pathFor routeName }}">{{ title }}</a>
-    </li>
+    </div>
   {{/ if }}
 </template>
