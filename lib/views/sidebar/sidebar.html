@@ -1,12 +1,10 @@
 <template name="orionSemanticSidebar">
-  <div class="item">
-    <a class="ui brand header" href="{{ options 'homePath' '/' }}">
-      <i class="user icon"></i>
-      <div class="content">
-        {{ options 'siteName' 'Admin' }}
-      </div>
-    </a>
-  </div>
+  <a class="ui brand header item" href="{{ options 'homePath' '/' }}">
+    <i class="user icon"></i>
+    <div class="content">
+      {{ options 'siteName' 'Admin' }}
+    </div>
+  </a>
   {{# each adminLinks }}
     {{> orionSemanticSidebarLink }}
   {{/ each }}
@@ -14,29 +12,27 @@
 
 <template name="orionSemanticSidebarLink">
   {{# if childs }}
-    <div class="item">
-      {{# if routeName }}
-        <a class="collapse-link-right" data-target="#admin-links-{{ identifier }}" data-toggle="collapse">
-          <i class="dropdown icon"></i>
-        </a>
-        <a href="{{ pathFor routeName }}">
-          {{ title }}
-        </a>
-      {{ else }}
-        <a data-target="#admin-links-{{ identifier }}" data-toggle="collapse">
-          {{ title }}
-          <i class="dropdown icon"></i>
-        </a>
-      {{/ if }}
-      <div class="collapse" id="admin-links-{{ identifier }}">
-        {{# each childs }}
-          {{> orionSemanticSidebarLink }}
-        {{/ each }}
-      </div>
+    {{# if routeName }}
+      <a class="collapse-link-right item" data-target="#admin-links-{{ identifier }}" data-toggle="collapse">
+        <i class="dropdown icon"></i>
+      </a>
+      <a href="{{ pathFor routeName }} item">
+        {{ title }}
+      </a>
+    {{ else }}
+      <a class="item" data-target="#admin-links-{{ identifier }}" data-toggle="collapse">
+        {{ title }}
+        <i class="dropdown icon"></i>
+      </a>
+    {{/ if }}
+    <div class="collapse item" id="admin-links-{{ identifier }}">
+      {{# each childs }}
+        {{> orionSemanticSidebarLink }}
+      {{/ each }}
     </div>
   {{ else }}
-    <div class="item {{ isActiveRoute regex=activeRouteRegex }}">
-      <a href="{{ pathFor routeName }}">{{ title }}</a>
-    </div>
+    <a class="{{ isActiveRoute regex=activeRouteRegex }} item" href="{{ pathFor routeName }}">
+      {{ title }}
+    </a>
   {{/ if }}
 </template>
