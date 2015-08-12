@@ -19,7 +19,6 @@
 <template name="orionSemanticOutAdminLayout">
   <div class="ui stackable centered grid container">
     <div class="column">
-      <h1 class="ui dividing header">{{> yield 'title' }}</h1>
       {{> yield }}
     </div>
   </div>
@@ -36,7 +35,7 @@
         <i class="dropdown icon"></i>
         <div class="menu">
           {{# each childs }}
-            <a class="item {{ isActiveRoute regex=activeRouteRegex }}" href="{{ pathFor routeName }}">
+            <a class="item {{ isActiveRoute regex=activeRouteRegex }}" href="{{ RouterLayerPathFor routeName }}">
               {{ title }}
             </a>
           {{/each}}

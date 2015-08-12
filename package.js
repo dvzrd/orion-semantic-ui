@@ -1,7 +1,7 @@
 Package.describe({
   name: 'dvz:orion-semantic-ui',
   summary: 'Semantic-UI Orion Admin Theme',
-  version: '0.1.6',
+  version: '0.1.7',
   git: 'https://github.com/amazingBastard/orion-semantic-ui'
 });
 
@@ -12,7 +12,6 @@ Package.onUse(function(api) {
     'meteor-platform',
     'orionjs:core@1.2.0',
     'less',
-    'iron:layout@1.0.7',
     'aldeed:autoform@5.1.2',
     'aldeed:tabular@1.1.0',
     'useraccounts:semantic-ui@1.11.1',
@@ -21,7 +20,6 @@ Package.onUse(function(api) {
 
   api.imply([
     'orionjs:core',
-    'iron:layout',
     'aldeed:autoform',
     'useraccounts:semantic-ui'
   ]);

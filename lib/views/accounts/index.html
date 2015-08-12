@@ -27,10 +27,10 @@
       <button class="ui tiny red logout button">
         {{ i18n 'global.logout' }}
       </button>
-      <a class="ui tiny button" href="{{ pathFor 'myAccount.profile' }}">
+      <a class="ui tiny button" href="{{ RouterLayerPathFor 'myAccount.profile' }}">
         {{ i18n 'accounts.updateProfile.title' }}
       </a>
-      <a class="ui tiny button" href="{{ pathFor 'myAccount.password' }}">
+      <a class="ui tiny button" href="{{ RouterLayerPathFor 'myAccount.password' }}">
         {{ i18n 'accounts.changePassword.title' }}
       </a>
     {{/ Layout }}

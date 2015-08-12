@@ -6,8 +6,8 @@
 	{{# Layout template="orionSemanticContentContainer" }}
 		{{# if getSchema }}
 			{{> quickForm collection="orion.pages.collection" schema=getSchema doc=this id="orionPagesUpdateForm" type="update" buttonContent=false }}
-			<a class="ui cancel-btn button" href="{{ pathFor 'pages.index' }}">{{ i18n 'global.cancel' }}</a>
-			<a class="ui red delete-btn button" href="{{ pathFor 'pages.delete' }}">{{ i18n 'global.delete' }}</a>
+			<a class="ui cancel-btn button" href="{{ RouterLayerPathFor 'pages.index' }}">{{ i18n 'global.cancel' }}</a>
+			<a class="ui red delete-btn button" href="{{ RouterLayerPathFor 'pages.delete' }}">{{ i18n 'global.delete' }}</a>
 			<a class="ui primary save-btn button">{{ i18n 'global.save' }}</a>
 		{{/ if }}
 	{{/ Layout }}

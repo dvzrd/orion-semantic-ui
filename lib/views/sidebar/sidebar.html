@@ -16,7 +16,7 @@
       <a class="collapse-link-right item" data-target="#admin-links-{{ identifier }}" data-toggle="collapse">
         <i class="dropdown icon"></i>
       </a>
-      <a href="{{ pathFor routeName }} item">
+      <a href="{{ RouterLayerPathFor routeName }} item">
         {{ title }}
       </a>
     {{ else }}
@@ -31,7 +31,7 @@
       {{/ each }}
     </div>
   {{ else }}
-    <a class="{{ isActiveRoute regex=activeRouteRegex }} item" href="{{ pathFor routeName }}">
+    <a class="{{ RouterLayerIsActiveRoutePartial activeRouteRegex }} item" href="{{ RouterLayerPathFor routeName }}">
       {{ title }}
     </a>
   {{/ if }}

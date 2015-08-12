@@ -12,10 +12,10 @@
           </div>
         </div>
         <p>
-          <a href="{{ pathFor 'registerWithInvitation' _id=invitationId }}">{{ urlFor 'registerWithInvitation' _id=invitationId }}</a>
+          <a href="{{ RouterLayerPathFor 'registerWithInvitation' _id=invitationId }}">{{ urlFor 'registerWithInvitation' _id=invitationId }}</a>
         </p>
         <hr>
-        <a class="ui button" href="{{ pathFor 'accounts.index' }}">
+        <a class="ui button" href="{{ RouterLayerPathFor 'accounts.index' }}">
           {{ i18n 'global.back' }}
         </a>
         <button class="ui primary btn-invite-another button">
@@ -74,7 +74,7 @@
 
           <hr>
 
-          <a class="ui button" href="{{ pathFor 'accounts.index' }}">
+          <a class="ui button" href="{{ RouterLayerPathFor 'accounts.index' }}">
             {{ i18n 'global.cancel' }}
           </a>
           <button class="ui primary button">

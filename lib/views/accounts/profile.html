@@ -8,13 +8,13 @@
       {{# autoForm schema=getSchema id="updateMyProfileForm" collection="Meteor.users" type="update" doc=getDoc }}
         {{> afQuickFields name='profile' }}
 
-        <a class="ui button" href="{{ pathFor 'myAccount.index' }}">
+        <a class="ui button" href="{{ RouterLayerPathFor 'myAccount.index' }}">
           {{ i18n 'global.cancel' }}
         </a>
         <button class="ui primary button">
           {{ i18n 'global.save' }}
         </button>
-        
+
       {{/ autoForm }}
     {{/ Layout }}
   {{/ Layout }}

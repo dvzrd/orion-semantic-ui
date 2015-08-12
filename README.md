@@ -22,6 +22,6 @@ Additionally, this package makes use of ```fabienb4:autoform-semantic-ui``` so t
 
 ```
 Meteor.startup(function() {
-  AutoForm.setDefaultTemplate("semanticUI");
+  AutoForm.setDefaultTemplate('semanticUI');
 });
 ```
