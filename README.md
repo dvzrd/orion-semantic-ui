@@ -1,5 +1,7 @@
 # Semantic-UI Orion Admin Theme
 
+NOTE: This current version does not work with the latest orion version - The issues are currently being resolved. This note will be removed when the package works again. Sorry for the inconvenience.
+
 This is the unstyled version of the Orion Admin Theme. This theme is a replica of the ```orionjs:bootstrap``` package. The markup and styles have been updated to use Semantic-UI. This package is for orion developers that would prefer to use semantic-ui for their projects.
 
 ## Demo
