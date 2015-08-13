@@ -1,7 +1,7 @@
 Package.describe({
   name: 'dvz:orion-semantic-ui',
   summary: 'Semantic-UI Orion Admin Theme',
-  version: '0.2.0',
+  version: '0.2.1',
   git: 'https://github.com/amazingBastard/orion-semantic-ui'
 });
 
