@@ -65,9 +65,15 @@
           </div>
         </div>
       </div>
-      <button id="btnDeleteUser" class="ui big red button" user="{{user._id}}">
-        {{ i18n 'accounts.update.sections.deleteUser.button' }}
-      </button>
+      {{# if confirmDelete }}
+        <button id="btnConfirmDeleteUser" class="ui big red button" user="{{user._id}}">
+          {{ i18n 'global.confirm' }}
+        </button>
+      {{ else }}
+        <button id="btnDeleteUser" class="ui big red button">
+          {{ i18n 'accounts.update.sections.deleteUser.button' }}
+        </button>
+      {{/ if }}
     </div>
 
     <br>
