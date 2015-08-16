@@ -1,7 +1,6 @@
 @import url(//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600);
 
 .ui.orion.admin {
-
   font-family: 'Source Sans Pro', sans-serif;
   -webkit-font-smoothing: antialiased;
   padding-left: 0;
@@ -12,7 +11,11 @@
 	overflow: hidden;
 	background: #fff;
 
-  .ui.vertical.menu {
+  img {
+    max-width: 100%;
+  }
+
+  .ui.orion.side {
     position: fixed;
 		top: 0;
 	  left: 0;
@@ -27,6 +30,18 @@
 
     @media (min-width: 48em) {
       width: 35%;
+    }
+
+    .ui.vertical.menu {
+      position: relative;
+			top: 0;
+			bottom: 0;
+			height: 100%;
+			width: 100%;
+			margin: 0;
+		  padding: 1em;
+			overflow-x: hidden;
+			overflow-y: auto;
     }
   }
 
@@ -54,11 +69,36 @@
 		  opacity: 0;
 		  transition: opacity 300ms, width 150ms 300ms, height 150ms 300ms;
 		}
+
+    .ui.top.menu {
+      
+      .menu-toggle {
+        cursor: pointer;
+      }
+    }
+
+    .ui.dividing.header {
+
+      .ui.tiny.icon.button {
+        margin: 0;
+        padding: 0.35em 0.25em 0.25em;
+        font-size: 1.25rem;
+
+        .icon {
+          margin: 0;
+          font-size: 1.25rem;
+        }
+      }
+    }
+
+    .ui.grid.container {
+      padding-top: 5rem !important;
+    }
   }
 
   &.toggled {
 
-		.ui.vertical.menu {
+		.ui.orion.side {
 			visibility: visible;
 			transition: transform 300ms;
 		}
@@ -78,30 +118,4 @@
 			}
 		}
 	}
-
-  .menu-toggle {
-    cursor: pointer;
-  }
-
-  img {
-    max-width: 100%;
-  }
-
-  .ui.grid.container {
-    padding-top: 5rem !important;
-  }
-
-  .ui.dividing.header {
-
-    .ui.tiny.icon.button {
-      margin: 0;
-      padding: 0.35em 0.25em 0.25em;
-      font-size: 1.25rem;
-
-      .icon {
-        margin: 0;
-        font-size: 1.25rem;
-      }
-    }
-  }
 }

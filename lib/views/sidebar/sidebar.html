@@ -1,13 +1,15 @@
 <template name="orionSemanticSidebar">
-  <a class="ui brand header item" href="{{ options 'homePath' '/' }}">
-    <i class="user icon"></i>
-    <div class="content">
-      {{ options 'siteName' 'Admin' }}
-    </div>
-  </a>
-  {{# each adminLinks }}
-    {{> orionSemanticSidebarLink }}
-  {{/ each }}
+  <nav class="ui inverted inline vertical menu">
+    <a class="ui brand header item" href="{{ options 'homePath' '/' }}">
+      <i class="user icon"></i>
+      <div class="content">
+        {{ options 'siteName' 'Admin' }}
+      </div>
+    </a>
+    {{# each adminLinks }}
+      {{> orionSemanticSidebarLink }}
+    {{/ each }}
+  </nav>
 </template>
 
 <template name="orionSemanticSidebarLink">

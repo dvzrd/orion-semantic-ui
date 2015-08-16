@@ -1,10 +1,10 @@
 <template name="orionSemanticLayout">
   <div class="ui orion admin">
-    <div class="ui inverted inline vertical menu">
+    <aside class="ui orion side">
       {{# if dictionaryReady }}
         {{> reactiveTemplate template="adminSidebar" }}
       {{/ if }}
-    </div>
+    </aside>
     <div class="ui orion main">
       {{> orionSemanticHeader }}
       <div class="ui stackable grid container">
