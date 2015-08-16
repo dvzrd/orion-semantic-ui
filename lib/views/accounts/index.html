@@ -5,38 +5,38 @@
     {{/ Layout }}
 
     {{# Layout template="orionSemanticContentContainer" }}
-      <div class="ui grid">
-        <div class="eight wide column">
-          <div class="ui card">
-            <div class="content">
-              {{# each currentUser.roles }}
-                <div class="right floated meta">
-                  <span class="ui red label">{{ this }}</span>
-                </div>
-              {{/ each }}
-              {{# if currentUser.profile.picture }}
-                <img class="ui avatar image" src="{{ currentUser.profile.picture.url }}">
-              {{/ if }}
+      <div class="ui card">
+        <div class="content">
+          {{# each currentUser.roles }}
+            <div class="right floated meta">
+              <span class="ui red label">{{ this }}</span>
+            </div>
+          {{/ each }}
+          {{# if currentUser.profile.picture }}
+            <img class="ui avatar image" src="{{ currentUser.profile.picture.url }}">
+            <strong>{{ currentUser.profile.name }}</strong>
+          {{else}}
+            <div class="header">
               {{ currentUser.profile.name }}
-              <div class="description">
-                {{# each currentUser.emails }}
-                  <p class="email">{{ address }}</p>
-                {{/ each }}
-              </div>
             </div>
-            <div class="extra content">
-              <div class="ui three buttons">
-                <button class="ui tiny red logout button">
-                  {{ i18n 'global.logout' }}
-                </button>
-                <a class="ui tiny button" href="{{ RouterLayerPathFor 'myAccount.profile' }}">
-                  {{ i18n 'accounts.updateProfile.title' }}
-                </a>
-                <a class="ui tiny button" href="{{ RouterLayerPathFor 'myAccount.password' }}">
-                  {{ i18n 'accounts.changePassword.title' }}
-                </a>
-              </div>
-            </div>
+          {{/ if }}
+          <div class="description">
+            {{# each currentUser.emails }}
+              <p class="email">{{ address }}</p>
+            {{/ each }}
+          </div>
+        </div>
+        <div class="extra content">
+          <div class="ui three buttons">
+            <button class="ui tiny red logout button">
+              {{ i18n 'global.logout' }}
+            </button>
+            <a class="ui tiny button" href="{{ RouterLayerPathFor 'myAccount.profile' }}">
+              {{ i18n 'accounts.updateProfile.title' }}
+            </a>
+            <a class="ui tiny button" href="{{ RouterLayerPathFor 'myAccount.password' }}">
+              {{ i18n 'accounts.changePassword.title' }}
+            </a>
           </div>
         </div>
       </div>
