@@ -6,33 +6,41 @@
 
     {{# Layout template="orionSemanticContentContainer" }}
       <div class="ui grid">
-        {{# if currentUser.profile.picture }}
-          <div class="two wide column">
-            <img class="ui bordered profile-picture image" src="{{ currentUser.profile.picture.url }}">
-          </div>
-        {{/ if }}
-        <div class="ten wide column">
-          <h2 class="ui header">{{ currentUser.profile.name }}</h2>
-          {{# each currentUser.emails }}
-            <p>{{ address }}</p>
-          {{/ each }}
-          {{# each currentUser.roles }}
-            <span class="ui red label">{{ this }}</span>
-          {{/ each }}
+        <div class="eight wide column">
+          <div class="ui card">
+            <div class="content">
+              {{# each currentUser.roles }}
+                <div class="right floated meta">
+                  <span class="ui red label">{{ this }}</span>
+                </div>
+              {{/ each }}
+              <div class="header">{{ currentUser.profile.name }}</div>
+            </div>
+            {{# if currentUser.profile.picture }}
+              <div class="image">
+                <img class="ui profile-picture image" src="{{ currentUser.profile.picture.url }}">
+              </div>
+            {{/ if }}
+            <div class="descrption">
+              {{# each currentUser.emails }}
+                <p class="email">{{ address }}</p>
+              {{/ each }}
+            </div>
+            <div class="extra content">
+              <div class="ui three buttons">
+                <button class="ui tiny red logout button">
+                  {{ i18n 'global.logout' }}
+                </button>
+                <a class="ui tiny button" href="{{ RouterLayerPathFor 'myAccount.profile' }}">
+                  {{ i18n 'accounts.updateProfile.title' }}
+                </a>
+                <a class="ui tiny button" href="{{ RouterLayerPathFor 'myAccount.password' }}">
+                  {{ i18n 'accounts.changePassword.title' }}
+                </a>
+              </div>
+            </div>
         </div>
       </div>
-
-      <hr>
-
-      <button class="ui tiny red logout button">
-        {{ i18n 'global.logout' }}
-      </button>
-      <a class="ui tiny button" href="{{ RouterLayerPathFor 'myAccount.profile' }}">
-        {{ i18n 'accounts.updateProfile.title' }}
-      </a>
-      <a class="ui tiny button" href="{{ RouterLayerPathFor 'myAccount.password' }}">
-        {{ i18n 'accounts.changePassword.title' }}
-      </a>
     {{/ Layout }}
   {{/ Layout }}
 </template>
