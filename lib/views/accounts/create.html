@@ -11,10 +11,9 @@
             Invitation created successfully
           </div>
         </div>
-        <p>
-          <a href="{{ RouterLayerPathFor 'registerWithInvitation' _id=invitationId }}">{{ urlFor 'registerWithInvitation' _id=invitationId }}</a>
-        </p>
-        <hr>
+        <a class="ui button" href="{{ RouterLayerPathFor 'registerWithInvitation' _id=invitationId }}">
+          {{ urlFor 'registerWithInvitation' _id=invitationId }}
+        </a>
         <a class="ui button" href="{{ RouterLayerPathFor 'accounts.index' }}">
           {{ i18n 'global.back' }}
         </a>
@@ -36,8 +35,6 @@
             </div>
           </div>
 
-          <hr>
-
           <div class="grouped fields">
             <label for="roles">{{ i18n 'accounts.create.selectRoles' }}</label>
             {{# each roles }}
@@ -49,8 +46,6 @@
               </div>
             {{/ each }}
           </div>
-
-          <hr>
 
           <div class="field">
             <label for="email">{{ i18n 'accounts.create.email' }} {{# if createWithInvitation }}({{ i18n 'global.optional' }}){{/ if }}</label>
@@ -72,14 +67,13 @@
             </div>
           {{/ unless }}
 
-          <hr>
-
           <a class="ui button" href="{{ RouterLayerPathFor 'accounts.index' }}">
             {{ i18n 'global.cancel' }}
           </a>
           <button class="ui primary button">
             {{ i18n 'global.create' }}
           </button>
+          
         </form>
       {{/ if }}
     {{/ Layout }}

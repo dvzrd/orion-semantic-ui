@@ -4,11 +4,13 @@
       {{ i18n 'accounts.update.title' }}
     {{/ Layout }}
 
-    {{# autoForm id="accountsUpdateEmailsForm" schema=emailsSchema type="method-update" doc=user meteormethod="orionAccountsUpdateEmails" }}
-      {{> afQuickField name='emails' }}
+    <div class="ui raised segment">
+      {{# autoForm id="accountsUpdateEmailsForm" schema=emailsSchema type="method-update" doc=user meteormethod="orionAccountsUpdateEmails" }}
+        {{> afQuickField name='emails' }}
 
-      <button class="ui primary button">{{ i18n 'global.save' }}</button>
-    {{/ autoForm }}
+        <button class="ui primary button">{{ i18n 'global.save' }}</button>
+      {{/ autoForm }}
+    </div>
 
     <h2 class="ui header">{{ i18n 'accounts.update.sections.profile.title' }}</h2>
 
