@@ -3,20 +3,18 @@
     {{# Layout template="orionSemanticTitle" }}
       {{ i18n 'config.update.title' }}
     {{/ Layout }}
-    {{# Layout template="orionSemanticContentContainer" }}
-      <div class="ui small buttons">
-        {{> reactiveTemplate template="tabs" data=getDataForTabs }}
-      </div>
-      <div class="ui stacked segment">
-        {{# autoForm collection="orion.config.collection" id="updateConfigForm" type="update" doc=getDoc }}
-          {{# if getFields }}
-            {{# each afFieldNames fields=getFields }}
-              {{> afQuickField name=this.name options=afOptionsFromSchema }}
-            {{/ each}}
-          {{/ if }}
-          <button class="ui primary button">{{ i18n 'global.save' }}</button>
-        {{/ autoForm }}
-      </div>
-    {{/ Layout }}
+    <div class="ui small buttons">
+      {{> reactiveTemplate template="tabs" data=getDataForTabs }}
+    </div>
+    <div class="ui stacked segment">
+      {{# autoForm collection="orion.config.collection" id="updateConfigForm" type="update" doc=getDoc }}
+        {{# if getFields }}
+          {{# each afFieldNames fields=getFields }}
+            {{> afQuickField name=this.name options=afOptionsFromSchema }}
+          {{/ each}}
+        {{/ if }}
+        <button class="ui primary button">{{ i18n 'global.save' }}</button>
+      {{/ autoForm }}
+    </div>
   {{/ Layout }}
 </template>

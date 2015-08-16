@@ -3,18 +3,16 @@
     {{# Layout template="orionSemanticTitle" }}
       {{ i18n 'dictionary.update.title' }}
     {{/ Layout }}
-    {{# Layout template="orionSemanticContentContainer" }}
-      <div class="ui small buttons">
-        {{> reactiveTemplate template="tabs" data=getDataForTabs }}
-      </div>
-      <div class="ui stacked segment">
-        {{# autoForm collection="orion.dictionary" id="updateDictionaryForm" type="update" doc=getDoc }}
-          {{# if currentCategory }}
-            {{> afQuickFields name=currentCategory }}
-          {{/ if }}
-          <button class="ui primary button">{{ i18n 'global.save' }}</button>
-        {{/ autoForm }}
-      </div>
-    {{/ Layout }}
+    <div class="ui small buttons">
+      {{> reactiveTemplate template="tabs" data=getDataForTabs }}
+    </div>
+    <div class="ui stacked segment">
+      {{# autoForm collection="orion.dictionary" id="updateDictionaryForm" type="update" doc=getDoc }}
+        {{# if currentCategory }}
+          {{> afQuickFields name=currentCategory }}
+        {{/ if }}
+        <button class="ui primary button">{{ i18n 'global.save' }}</button>
+      {{/ autoForm }}
+    </div>
   {{/ Layout }}
 </template>
