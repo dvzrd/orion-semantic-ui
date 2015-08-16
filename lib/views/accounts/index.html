@@ -14,17 +14,15 @@
                   <span class="ui red label">{{ this }}</span>
                 </div>
               {{/ each }}
-              <div class="header">{{ currentUser.profile.name }}</div>
-            </div>
-            {{# if currentUser.profile.picture }}
-              <div class="image">
-                <img class="ui profile-picture image" src="{{ currentUser.profile.picture.url }}">
+              {{# if currentUser.profile.picture }}
+                <img class="ui avatar image" src="{{ currentUser.profile.picture.url }}">
+              {{/ if }}
+              {{ currentUser.profile.name }}
+              <div class="description">
+                {{# each currentUser.emails }}
+                  <p class="email">{{ address }}</p>
+                {{/ each }}
               </div>
-            {{/ if }}
-            <div class="descrption">
-              {{# each currentUser.emails }}
-                <p class="email">{{ address }}</p>
-              {{/ each }}
             </div>
             <div class="extra content">
               <div class="ui three buttons">
