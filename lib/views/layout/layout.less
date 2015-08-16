@@ -24,6 +24,10 @@
 	  visibility: hidden;
 	  background: #333;
 	  transition: all 300ms;
+
+    @media (min-width: 48em) {
+      width: 35%;
+    }
   }
 
   .ui.orion.main {
@@ -61,6 +65,10 @@
 
 		.ui.orion.main {
 			transform: translate3d(75%, 0, 0);
+
+      @media (min-width: 48em) {
+        transform: translate3d(35%, 0, 0);
+      }
 
 			&::after {
 				width: 100%;
