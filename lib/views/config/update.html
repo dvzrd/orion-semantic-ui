@@ -7,7 +7,7 @@
       <div class="ui small buttons">
         {{> reactiveTemplate template="tabs" data=getDataForTabs }}
       </div>
-      <div class="ui raised segment">
+      <div class="ui stacked segment">
         {{# autoForm collection="orion.config.collection" id="updateConfigForm" type="update" doc=getDoc }}
           {{# if getFields }}
             {{# each afFieldNames fields=getFields }}

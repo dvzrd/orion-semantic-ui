@@ -4,7 +4,7 @@
       {{ i18n 'accounts.update.title' }}
     {{/ Layout }}
 
-    <div class="ui raised segment">
+    <div class="ui stacked segment">
       {{# autoForm id="accountsUpdateEmailsForm" schema=emailsSchema type="method-update" doc=user meteormethod="orionAccountsUpdateEmails" }}
         {{> afQuickField name='emails' }}
 
@@ -14,7 +14,7 @@
 
     <h2 class="ui header">{{ i18n 'accounts.update.sections.profile.title' }}</h2>
 
-    <div class="ui raised segment">
+    <div class="ui stacked segment">
       {{# autoForm id="accountsUpdateProfileForm" schema=profileSchema type="method-update" doc=user meteormethod="orionAccountsUpdateProfile" }}
         {{> afQuickFields name='profile' }}
 
@@ -24,7 +24,7 @@
 
     <h2 class="ui header">{{ i18n 'accounts.update.sections.roles.title' }}</h2>
 
-    <div class="ui raised segment">
+    <div class="ui stacked segment">
       <form class="ui roles form">
         <div class="inline fields">
           <label for="roles">{{ i18n 'accounts.update.sections.roles.selectRoles' }}</label>
@@ -48,7 +48,7 @@
 
     <h2 class="ui header">{{ i18n 'accounts.update.sections.changePassword.title' }}</h2>
 
-    <div class="ui raised segment">
+    <div class="ui stacked segment">
       {{# autoForm id="accountsUpdatePasswordForm" schema=passwordSchema type="method-update" doc=user meteormethod="orionAccountsUpdatePassword" }}
         {{> afQuickField name='password' }}
         {{> afQuickField name='confirm' }}
@@ -58,7 +58,7 @@
 
     <h2 class="ui header">{{ i18n 'accounts.update.sections.deleteUser.title' }}</h2>
 
-    <div class="ui raised segment">
+    <div class="ui stacked segment">
       <div class="ui negative icon message">
         <i class="warning sign icon"></i>
         <div class="content">
