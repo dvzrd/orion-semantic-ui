@@ -1,16 +1,18 @@
 <template name="orionSemanticLayout">
-  <div class="ui inverted left inline vertical sidebar menu">
-    {{# if dictionaryReady }}
-      {{> reactiveTemplate template="adminSidebar" }}
-    {{/ if }}
-  </div>
-  <div class="orion-semantic-admin pusher">
-    {{> orionSemanticHeader }}
-    <div class="ui stackable grid container">
-      <div class="admin-content column">
-        {{# if dictionaryReady }}
-          {{> yield }}
-        {{/ if }}
+  <div class="ui orion admin">
+    <div class="ui inverted inline vertical menu">
+      {{# if dictionaryReady }}
+        {{> reactiveTemplate template="adminSidebar" }}
+      {{/ if }}
+    </div>
+    <div class="ui orion main">
+      {{> orionSemanticHeader }}
+      <div class="ui stackable grid container">
+        <div class="admin-content column">
+          {{# if dictionaryReady }}
+            {{> yield }}
+          {{/ if }}
+        </div>
       </div>
     </div>
   </div>
