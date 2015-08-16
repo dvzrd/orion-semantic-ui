@@ -6,7 +6,11 @@ NOTE: The current version is now stable with the latest orion version. There are
 
 ## Demo
 
-[Here is a demo](http://orion-semantic-ui.meteor.com/)
+Demo for testing orion semantic ui admin theme. Please note, all data is published to the client, you would need to add more refined publications and subscriptions for production.
+
+[DEMO](http://orion-semantic-ui.meteor.com)
+
+> Login with username: admin // password: admin
 
 ## Installation
 
