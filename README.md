@@ -6,7 +6,7 @@ NOTE: The current version is now stable with the latest orion version. There are
 
 ## Demo
 
-[Here is a demo](http://orion-semantic-ui.meteor.com/) - it's basically a replica of the orion blog example but using semantic-ui.
+[Here is a demo](http://orion-semantic-ui.meteor.com/)
 
 ## Installation
 
