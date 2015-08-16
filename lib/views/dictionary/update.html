@@ -4,15 +4,17 @@
       {{ i18n 'dictionary.update.title' }}
     {{/ Layout }}
     {{# Layout template="orionSemanticContentContainer" }}
-      <div class="ui top attached tab segment">
+      <div class="ui small buttons">
         {{> reactiveTemplate template="tabs" data=getDataForTabs }}
       </div>
-      {{# autoForm collection="orion.dictionary" id="updateDictionaryForm" type="update" doc=getDoc }}
-        {{# if currentCategory }}
-          {{> afQuickFields name=currentCategory }}
-        {{/ if }}
-        <button class="ui primary button">{{ i18n 'global.save' }}</button>
-      {{/ autoForm }}
+      <div class="ui raised segment">
+        {{# autoForm collection="orion.dictionary" id="updateDictionaryForm" type="update" doc=getDoc }}
+          {{# if currentCategory }}
+            {{> afQuickFields name=currentCategory }}
+          {{/ if }}
+          <button class="ui primary button">{{ i18n 'global.save' }}</button>
+        {{/ autoForm }}
+      </div>
     {{/ Layout }}
   {{/ Layout }}
 </template>
