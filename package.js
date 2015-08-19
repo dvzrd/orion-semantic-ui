@@ -11,7 +11,7 @@ Package.onUse(function(api) {
   api.use([
     'meteor-platform',
     'orionjs:core@1.4.0',
-    'flemay:less-autoprefixer',
+    'flemay:less-autoprefixer@1.1.0',
     'aldeed:autoform@5.4.0',
     'aldeed:tabular@1.1.0',
     'useraccounts:semantic-ui@1.11.1',
