@@ -17,7 +17,7 @@ coffeescript@1.0.6
 dburles:collection-helpers@1.0.3
 ddp@1.1.0
 deps@1.0.7
-dvz:orion-semantic-ui@0.5.3
+dvz:orion-semantic-ui@0.5.4
 ejson@1.0.6
 email@1.0.6
 fabienb4:autoform-semantic-ui@0.4.5
@@ -33,7 +33,7 @@ json@1.0.3
 launch-screen@1.0.2
 less@1.0.14
 livedata@1.0.13
-local-test:dvz:orion-semantic-ui@0.5.3
+local-test:dvz:orion-semantic-ui@0.5.4
 localstorage@1.0.3
 logging@1.0.7
 matb33:collection-hooks@0.7.13

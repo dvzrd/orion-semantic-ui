@@ -71,6 +71,7 @@
     @media (min-width: 62em) {
       width: 75%;
       float: right;
+      transform: translate3d(0, 0, 0);
 
       &::after {
         display: none;
@@ -90,7 +91,7 @@
       .ui.right.dropdown.item {
 
         @media (min-width: 62em) {
-          padding: 1.5em 1em;
+          padding: 1.5em 1em !important;
         }
       }
     }
@@ -126,6 +127,10 @@
 
       @media (min-width: 48em) {
         transform: translate3d(35%, 0, 0);
+      }
+
+      @media (min-width: 62em) {
+        transform: translate3d(0, 0, 0);
       }
 
       &::after {
