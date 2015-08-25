@@ -2,7 +2,7 @@
 
 This is the unstyled version of the Orion Admin Theme. This theme is a replica of the ```orionjs:bootstrap``` package. The markup and styles have been updated to use Semantic-UI. This package is for orion developers that would prefer to use semantic-ui for their projects.
 
-> The current version is now stable with the latest orion version. There are still some stylistic issues that I'm working to resolve but nothing that will affect the CMS.
+> The current version is now stable with the latest orion version. Most style issues have been resolved. There is an issue with tabular since it uses bootstrap by default. I'm looking into updating tabular to use semantic-ui. Just bear with it for now.
 
 ## Demo
 
