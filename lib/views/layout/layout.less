@@ -35,6 +35,12 @@
     @media (min-width: 48em) {
       width: 35%;
     }
+
+    @media (min-width: 62em) {
+      width: 25%;
+      visibility: visible;
+      transition: transform 300ms;
+    }
   }
 
   .ui.orion.main {
@@ -62,10 +68,27 @@
       transition: opacity 300ms, width 150ms 300ms, height 150ms 300ms;
     }
 
+    @media (min-width: 62em) {
+      width: 75%;
+      float: right;
+
+      &::after {
+        display: none;
+      }
+    }
+
     .ui.top.menu {
 
       .menu-toggle {
         cursor: pointer;
+
+        @media (min-width: 62em) {
+          display: none;
+        }
+      }
+
+      .ui.right.dropdown.menu {
+        padding: 1.5em 1em;
       }
     }
 
