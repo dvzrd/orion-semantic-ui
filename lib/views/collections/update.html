@@ -1,27 +1,26 @@
 <template name="orionSemanticCollectionsUpdate">
     {{# Layout template="orionSemanticMediumContentOffset" }}
-    {{# Layout template="orionSemanticTitle" }}
-    {{i18n 'collections.update.title' collection.singularName }}
-    {{/ Layout }}
-    {{# Layout template="orionSemanticContentContainer" }}
-    {{#if Template.subscriptionsReady}}
-    {{# if item.canShowUpdate }}
-    {{> quickForm collection=collection doc=item id="orionSemanticCollectionsUpdateForm" type="update"
-    buttonContent=false }}
-    <br>
-    <button class="ui primary save button">
-        {{ i18n 'global.save' }}
-    </button>
-    <a class="ui button" href="{{ collection.indexPath }}">
-        {{ i18n 'global.cancel' }}
-    </a>
-    {{# if item.canShowRemove }}
-    <a class="ui red button" href="{{ collection.deletePath item._id }}">
-        {{i18n 'global.delete' }}
-    </a>
-    {{/if}}
-    {{/ if }}
-    {{/ if }}
-    {{/ Layout }}
+        {{# Layout template="orionSemanticTitle" }}
+            {{i18n 'collections.update.title' collection.singularName }}
+        {{/ Layout }}
+        {{# Layout template="orionSemanticContentContainer" }}
+             {{#if Template.subscriptionsReady}}
+                 {{# if item.canShowUpdate }}
+                     {{> quickForm collection=collection doc=item id="orionSemanticCollectionsUpdateForm" type="update" buttonContent=false omitFields=collection.getHiddenFields }}
+                     <br>
+                     <button class="ui primary save button">
+                         {{ i18n 'global.save' }}
+                     </button>
+                     <a class="ui button" href="{{ collection.indexPath }}">
+                         {{ i18n 'global.cancel' }}
+                     </a>
+                     {{# if item.canShowRemove }}
+                         <a class="ui red button" href="{{ collection.deletePath item._id }}">
+                             {{i18n 'global.delete' }}
+                         </a>
+                     {{/if}}
+                 {{/ if }}
+             {{/ if }}
+        {{/ Layout }}
     {{/ Layout }}
 </template>
