@@ -1,24 +1,24 @@
 <template name="orionSemanticCollectionsCreate">
-  {{# Layout template="orionSemanticMediumContentOffset" }}
-    {{# if collection.canShowCreate }}
-      {{# Layout template="orionSemanticTitle" }}
-        {{ i18n 'collections.create.title' collection.singularName }}
-      {{/ Layout }}
-      {{# Layout template="orionSemanticContentContainer" }}
-        {{> quickForm collection=collection id="orionSemanticCollectionsCreateForm" type="insert" buttonContent=false omitFields=collection.getHiddenFields }}
-        <a class="ui button" href="{{ collection.indexPath }}">
-          {{ i18n 'global.cancel' }}
-        </a>
-        <button class="ui primary create button">
-          {{ i18n 'global.create' }}
-        </button>
-      {{/ Layout }}
-    {{ else }}
-      <div class="ui negative message">
-        <div class="header">
-          {{ i18n 'global.noPermission' }}
-        </div>
-      </div>
-    {{/ if }}
-  {{/ Layout }}
+    {{# Layout template="orionSemanticMediumContentOffset" }}
+        {{# if collection.canShowCreate }}
+            {{# Layout template="orionSemanticTitle" }}
+                {{ i18n 'collections.create.title' collection.singularName }}
+            {{/ Layout }}
+            {{# Layout template="orionSemanticContentContainer" }}
+                {{> quickForm collection=collection id="orionSemanticCollectionsCreateForm" type="insert" buttonContent=false omitFields=collection.getHiddenFields }}
+                <a class="ui button" href="{{ collection.indexPath }}">
+                    {{ i18n 'global.cancel' }}
+                </a>
+                <button class="ui primary create button">
+                    {{ i18n 'global.create' }}
+                </button>
+            {{/ Layout }}
+        {{ else }}
+            <div class="ui negative message">
+                <div class="header">
+                    {{ i18n 'global.noPermission' }}
+                </div>
+            </div>
+        {{/ if }}
+    {{/ Layout }}
 </template>
