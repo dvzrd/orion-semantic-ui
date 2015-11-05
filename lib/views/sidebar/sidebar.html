@@ -1,45 +1,49 @@
 <template name="orionSemanticSidebar">
-  <nav class="ui inverted inline vertical menu">
-    <a class="ui brand header item" href="{{ options 'homePath' '/' }}">
-      <i class="user icon"></i>
-      <div class="content">
-        {{ options 'siteName' 'Admin' }}
-      </div>
-    </a>
-    {{# each adminLinks }}
-      {{> orionSemanticSidebarLink }}
-    {{/ each }}
-  </nav>
+    <nav class="ui inverted inline vertical menu">
+        <a class="ui brand header item" href="{{ options 'homePath' '/' }}">
+            <i class="user icon"></i>
+
+            <div class="content">
+                {{ options 'siteName' 'Admin' }}
+            </div>
+        </a>
+        {{# each adminLinks }}
+            {{> orionSemanticSidebarLink }}
+        {{/ each }}
+    </nav>
 </template>
 
 <template name="orionSemanticSidebarLink">
-  {{# if childs }}
-    {{# if routeName }}
-      <a class="ui dropdown item">
-        <i class="dropdown icon"></i>
-        <div class="menu" id="admin-links-{{ identifier }}" href="#">
-          {{# each childs }}
-            {{> orionSemanticSidebarLink }}
-          {{/ each }}
-        </div>
-      </a>
-      <a class="item" href="{{ RouterLayerPathFor routeName }}">
-        {{ title }}
-      </a>
+    {{# if childs }}
+        {{# if routeName }}
+            <a class="ui dropdown item">
+                <i class="dropdown icon"></i>
+
+                <div class="menu" id="admin-links-{{ identifier }}">
+                    {{# each childs }}
+                        {{> orionSemanticSidebarLink }}
+                    {{/ each }}
+                </div>
+            </a>
+            <a class="item" href="{{ RouterLayerPathFor routeName }}">
+                {{ title }}
+            </a>
+        {{ else }}
+            <a class="ui dropdown item">
+                {{ title }}
+                <i class="dropdown icon"></i>
+
+                <div class="menu" id="admin-links-{{ identifier }}">
+                    {{# each childs }}
+                        {{> orionSemanticSidebarLink }}
+                    {{/ each }}
+                </div>
+            </a>
+        {{/ if }}
     {{ else }}
-      <a class="ui dropdown item">
-        {{ title }}
-        <i class="dropdown icon"></i>
-        <div class="menu" id="admin-links-{{ identifier }}">
-          {{# each childs }}
-            {{> orionSemanticSidebarLink }}
-          {{/ each }}
-        </div>
-      </a>
+        <a class="{{ RouterLayerIsActiveRoutePartial activeRouteRegex }} item"
+           href="{{ RouterLayerPathFor routeName }}">
+            {{ title }}
+        </a>
     {{/ if }}
-  {{ else }}
-    <a class="{{ RouterLayerIsActiveRoutePartial activeRouteRegex }} item" href="{{ RouterLayerPathFor routeName }}">
-      {{ title }}
-    </a>
-  {{/ if }}
 </template>
