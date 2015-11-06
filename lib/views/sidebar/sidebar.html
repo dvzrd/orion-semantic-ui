@@ -17,29 +17,23 @@
     {{# if childs }}
         {{# if routeName }}
             <a class="ui dropdown item">
+                1
                 <i class="dropdown icon"></i>
-
-                <div class="menu" id="admin-links-{{ identifier }}">
-                    {{# each childs }}
-                        {{> orionSemanticSidebarLink }}
-                    {{/ each }}
-                </div>
             </a>
             <a class="item" href="{{ RouterLayerPathFor routeName }}">
                 {{ title }}
             </a>
         {{ else }}
             <a class="ui dropdown item">
-                {{ title }}
+                2 {{ title }}
                 <i class="dropdown icon"></i>
-
-                <div class="menu" id="admin-links-{{ identifier }}">
-                    {{# each childs }}
-                        {{> orionSemanticSidebarLink }}
-                    {{/ each }}
-                </div>
             </a>
         {{/ if }}
+        <div class="menu" id="admin-links-{{ identifier }}">
+            {{# each childs }}
+                {{> orionSemanticSidebarLink }}
+            {{/ each }}
+        </div>
     {{ else }}
         <a class="{{ RouterLayerIsActiveRoutePartial activeRouteRegex }} item"
            href="{{ RouterLayerPathFor routeName }}">
