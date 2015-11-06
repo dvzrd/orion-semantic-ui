@@ -16,11 +16,9 @@
 <template name="orionSemanticSidebarLink">
     {{# if childs }}
         {{# if routeName }}
-            <a class="ui dropdown item">
+            <a class="ui dropdown item" href="{{ RouterLayerPathFor routeName }}">
+                {{ title }}
                 <i class="dropdown icon"></i>
-            </a>
-            <a class="item" href="{{ RouterLayerPathFor routeName }}">
-                a {{ title }}
             </a>
         {{ else }}
             <a class="ui dropdown item">
