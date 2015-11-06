@@ -16,21 +16,23 @@
 <template name="orionSemanticSidebarLink">
     {{# if childs }}
         {{# if routeName }}
-            <a class="ui dropdown item" href="{{ RouterLayerPathFor routeName }}">
-                {{ title }}
-                <i class="dropdown icon"></i>
-            </a>
+            <div class="ui accordion item">
+                <a class="title" href="{{ RouterLayerPathFor routeName }}">
+                    {{ title }}
+                    <i class="dropdown icon"></i>
+                </a>
+                <div class="content" id="admin-links-{{ identifier }}">
+                    {{# each childs }}
+                        {{> orionSemanticSidebarLink }}
+                    {{/ each }}
+                </div>
+            </div>
         {{ else }}
             <a class="ui dropdown item">
                 {{ title }}
                 <i class="dropdown icon"></i>
             </a>
         {{/ if }}
-        <div class="menu" id="admin-links-{{ identifier }}">
-            {{# each childs }}
-                {{> orionSemanticSidebarLink }}
-            {{/ each }}
-        </div>
     {{ else }}
         <a class="{{ RouterLayerIsActiveRoutePartial activeRouteRegex }} item"
            href="{{ RouterLayerPathFor routeName }}">
