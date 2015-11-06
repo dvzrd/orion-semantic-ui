@@ -24,5 +24,32 @@
         float: left;
       }
     }
+
+    &.ui.accordion {
+      padding: 0;
+
+      .title {
+        display: block;
+        padding: 1.5em 1em;
+
+        &.active {
+          background: rgba(255, 255, 255, 0.08);
+        }
+      }
+
+      .dropdown.icon {
+        position: absolute;
+        top: 1.5em;
+        right: 1em;
+      }
+
+      .content {
+        padding: 0;
+
+        &.active {
+          background: rgba(255, 255, 255, 0.08);
+        }
+      }
+    }
   }
 }

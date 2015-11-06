@@ -19,8 +19,8 @@
             <div class="ui accordion item">
                 <a class="title" href="{{ RouterLayerPathFor routeName }}">
                     {{ title }}
-                    <i class="dropdown icon"></i>
                 </a>
+                <i class="dropdown icon"></i>
                 <div class="content" id="admin-links-{{ identifier }}">
                     {{# each childs }}
                         {{> orionSemanticSidebarLink }}
@@ -28,10 +28,17 @@
                 </div>
             </div>
         {{ else }}
-            <a class="ui dropdown item">
-                {{ title }}
+            <div class="ui accordion item">
+                <a class="title" href="#">
+                    {{ title }}
+                </a>
                 <i class="dropdown icon"></i>
-            </a>
+                <div class="content" id="admin-links-{{ identifier }}">
+                    {{# each childs }}
+                        {{> orionSemanticSidebarLink }}
+                    {{/ each }}
+                </div>
+            </div>
         {{/ if }}
     {{ else }}
         <a class="{{ RouterLayerIsActiveRoutePartial activeRouteRegex }} item"
