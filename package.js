@@ -18,12 +18,6 @@ Package.onUse(function(api) {
     'fabienb4:autoform-semantic-ui@0.4.5'
   ]);
 
-  api.imply([
-    'orionjs:core',
-    'aldeed:autoform',
-    'useraccounts:semantic-ui'
-  ]);
-
   api.addFiles([
     'lib/init.js',
     'lib/tabular.js'
