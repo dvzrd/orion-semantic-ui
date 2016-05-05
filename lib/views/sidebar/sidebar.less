@@ -1,53 +1,56 @@
-.ui.vertical.menu {
-  position: relative;
-  top: 0;
-  bottom: 0;
-  height: 100%;
-  width: 100% !important;
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
-  overflow-y: auto;
+.ui.orion.admin {
 
-  .item {
+  .ui.vertical.menu {
+    position: relative;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100% !important;
     margin: 0;
-    padding: 1.5em 1em;
+    padding: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
 
-    &.ui.brand.header {
-      padding: 1em 0.5em;
-      color: #fff;
+    .item {
+      margin: 0;
+      padding: 1.5em 1em;
 
-      .icon {
-        margin: 0;
-        margin-top: -0.15em;
-        padding: 0;
-        float: left;
-      }
-    }
+      &.ui.brand.header {
+        padding: 1em 0.5em;
+        color: #fff;
 
-    &.ui.accordion {
-      padding: 0;
-
-      .title {
-        display: block;
-        padding: 1.5em 1em;
-
-        &.active {
-          background: rgba(255, 255, 255, 0.08);
+        .icon {
+          margin: 0;
+          margin-top: -0.15em;
+          padding: 0;
+          float: left;
         }
       }
 
-      .dropdown.icon {
-        position: absolute;
-        top: 1.5em;
-        right: 1em;
-      }
-
-      .content {
+      &.ui.accordion {
         padding: 0;
 
-        &.active {
-          background: rgba(255, 255, 255, 0.08);
+        .title {
+          display: block;
+          padding: 1.5em 1em;
+
+          &.active {
+            background: rgba(255, 255, 255, 0.08);
+          }
+        }
+
+        .dropdown.icon {
+          position: absolute;
+          top: 1.5em;
+          right: 1em;
+        }
+
+        .content {
+          padding: 0;
+
+          &.active {
+            background: rgba(255, 255, 255, 0.08);
+          }
         }
       }
     }
